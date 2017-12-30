@@ -4,11 +4,6 @@
     A fully featured desktop application where you can download and browse GTA V Native functions from NativeDB (for script developers) 
   </p>
 </div>
-  [![GitHub issues](https://img.shields.io/github/issues/Rbn3D/GTAV_NativeDB_Explorer.svg)](https://github.com/Rbn3D/GTAV_NativeDB_Explorer/issues)
-  [![GitHub forks](https://img.shields.io/github/forks/Rbn3D/GTAV_NativeDB_Explorer.svg)](https://github.com/Rbn3D/GTAV_NativeDB_Explorer/network)
-  [![GitHub stars](https://img.shields.io/github/stars/Rbn3D/GTAV_NativeDB_Explorer.svg)](https://github.com/Rbn3D/GTAV_NativeDB_Explorer/stargazers)
-  [![Twitter](https://img.shields.io/twitter/url/https/github.com/Rbn3D/GTAV_NativeDB_Explorer.svg?style=social&style=flat-square)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FRbn3D%2FGTAV_NativeDB_Explorer)
-
 
 <h2 align="center">Download</h2>
 
