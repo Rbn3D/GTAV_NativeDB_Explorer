@@ -1,0 +1,42 @@
+﻿<controls:MetroWindow Name="TopWindow"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        x:Class="NativeDb_Explorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NativeDb_Explorer"
+        mc:Ignorable="d"
+        Title="Native DB Explorer" MinHeight="500" Width="720"
+        WindowState="Maximized"
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Name="CountFiltered"/>
+        </StackPanel>
+        <StackPanel  Grid.Row="1" Orientation="Horizontal">
+            <Label Padding="0" Margin="10,0" VerticalContentAlignment="Center">Filtering:</Label>
+            <TextBox Name="TxtFilter" Margin="0,2"
+                         controls:TextBoxHelper.Watermark="Quick filter..."
+                         Style="{DynamicResource SearchMetroTextBox}" Width="180" TextChanged="TxtFilter_TextChanged"/>
+        </StackPanel>
+        <DataGrid Name="GridNatives" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:MetroWindow}}}">
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="GridContextMenu" DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+                    <MenuItem Header="Copy native name (Full)" Command="{Binding Path=DataContext.CopyNativeFull, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
+                    <MenuItem Header="Copy native name (No parameters)" Command="{Binding Path=DataContext.CopyNativeNoParams, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
+                    <MenuItem Header="Copy native name (Simple)"  Command="{Binding Path=DataContext.CopyNativeSimple, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" ></MenuItem>
+                    <MenuItem Header="Copy Mem Address" Command="{Binding Path=DataContext.CopyMemAddress, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
+                    <MenuItem Header="Open in NativeDB..." Command="{Binding Path=DataContext.OpenInNativeDB, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</controls:MetroWindow>
