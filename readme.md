@@ -8,6 +8,7 @@
 <h2 align="center">Download</h2>
 
 https://github.com/Rbn3D/GTAV_NativeDB_Explorer/releases
+https://www.gta5-mods.com/tools/gta-v-nativedb-explorer
 
 <h2 align="center">Features</h2>
 
