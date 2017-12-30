@@ -7,7 +7,7 @@
 
 <h2 align="center">Download</h2>
 
-https://github.com/Rbn3D/GTAV_NativeDB_Explorer/releases
+https://github.com/Rbn3D/GTAV_NativeDB_Explorer/releases/latest
 
 <h2 align="center">Features</h2>
 
