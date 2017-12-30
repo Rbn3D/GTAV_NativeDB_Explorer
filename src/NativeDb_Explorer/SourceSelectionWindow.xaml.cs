@@ -94,5 +94,10 @@ namespace NativeDb_Explorer
             //Add link to 5-Mods page instead of Github since I assume most people asking for help don't use/know what Github is
             System.Diagnostics.Process.Start("https://www.gta5-mods.com/tools/gta-v-nativedb-explorer");
         }
+
+        private void GithubBtn_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Rbn3D/GTAV_NativeDB_Explorer");
+        }
     }
 }
