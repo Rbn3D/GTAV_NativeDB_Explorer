@@ -41,7 +41,7 @@
                     Exit
                 </TextBlock>
             </Button>
-            <Button Name="AboutBtn" Margin="5" HorizontalAlignment="Right" FlowDirection="LeftToRight" MinWidth="100" Height="40">
+            <Button Name="AboutBtn" Margin="5" HorizontalAlignment="Right" FlowDirection="LeftToRight" MinWidth="100" Height="40" Click="AboutBtn_Click">
                 <TextBlock FontSize="20">
                     Support/About...
                 </TextBlock>

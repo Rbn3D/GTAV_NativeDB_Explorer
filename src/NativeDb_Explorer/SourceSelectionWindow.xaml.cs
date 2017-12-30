@@ -88,5 +88,11 @@ namespace NativeDb_Explorer
             this.Close();
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void AboutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //Add link to 5-Mods page instead of Github since I assume most people asking for help don't use/know what Github is
+            System.Diagnostics.Process.Start("https://www.gta5-mods.com/tools/gta-v-nativedb-explorer");
+        }
     }
 }
