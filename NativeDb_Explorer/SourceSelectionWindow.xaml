@@ -31,7 +31,7 @@
             </Button>
             <Button Name="LoadNativesFromFileBtn" Margin="10" Click="LoadNativesFromFileBtn_Click">
                 <TextBlock>
-                    Load natives from html file...
+                    Load natives from file...
                 </TextBlock>
             </Button>
         </StackPanel>

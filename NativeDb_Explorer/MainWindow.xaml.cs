@@ -69,7 +69,12 @@ namespace NativeDb_Explorer
             if (text == String.Empty)
                 FilteredNatives = Natives;
             else
-                FilteredNatives = Natives.Where(n => n.FunctionName.ToLower().Contains(text) || n.Namespace.ToLower().Contains(text) || n.MemoryAddress.ToLower().Contains(text)).ToList();
+                FilteredNatives = Natives.Where(
+                    n => n.FunctionName.ToLower().Contains(text) || 
+                    n.Namespace.ToLower().Contains(text) || 
+                    (n.Namespace + "::" + n.FunctionName).ToLower().Contains(text) || 
+                    n.Address.ToLower().Contains(text)
+                ).ToList();
 
             GridNatives.ItemsSource = FilteredNatives;
             UpdateFilteringStats();
@@ -88,10 +93,26 @@ namespace NativeDb_Explorer
                         GTAVNative nat = (GTAVNative)GridNatives.SelectedValue;
 
                         if (nat != null)
-                            Clipboard.SetText($"{nat.Namespace}::{nat.FunctionName}{nat.ParametersSignature};");
+                        {
+                            string fullSignature = getNativeFullSignature(nat);
+
+                            Clipboard.SetText(fullSignature);
+                        }
+
                     }
                 });
             }
+        }
+
+        private static string getNativeFullSignature(GTAVNative nat)
+        {
+            var signature = nat.ParametersSignature;
+
+            if (signature == null || signature == String.Empty)
+                signature = "()";
+
+            var fullSignature = $"{nat.Namespace}::{nat.FunctionName}{signature};";
+            return fullSignature;
         }
 
         private ICommand copyNativeNoParams;

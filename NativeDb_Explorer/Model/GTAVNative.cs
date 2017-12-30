@@ -19,7 +19,7 @@ namespace NativeDb_Explorer.Model
 
         public String Description { get; set; }
 
-        public String MemoryAddress { get {return getMemoryAddressFromCommentary(); } }
+        public String Address { get {return getMemoryAddressFromCommentary(); } }
 
         private string getMemoryAddressFromCommentary()
         {

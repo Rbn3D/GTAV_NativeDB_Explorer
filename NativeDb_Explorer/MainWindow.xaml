@@ -25,7 +25,7 @@
             <Label Padding="0" Margin="10,0" VerticalContentAlignment="Center">Filtering:</Label>
             <TextBox Name="TxtFilter" Margin="0,2"
                          controls:TextBoxHelper.Watermark="Quick filter..."
-                         Style="{DynamicResource SearchMetroTextBox}" Width="180" TextChanged="TxtFilter_TextChanged"/>
+                         Style="{DynamicResource SearchMetroTextBox}" Width="230" TextChanged="TxtFilter_TextChanged"/>
         </StackPanel>
         <DataGrid Name="GridNatives" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:MetroWindow}}}">
             <DataGrid.ContextMenu>
@@ -33,7 +33,7 @@
                     <MenuItem Header="Copy native name (Full)" Command="{Binding Path=DataContext.CopyNativeFull, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
                     <MenuItem Header="Copy native name (No parameters)" Command="{Binding Path=DataContext.CopyNativeNoParams, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
                     <MenuItem Header="Copy native name (Simple)"  Command="{Binding Path=DataContext.CopyNativeSimple, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" ></MenuItem>
-                    <MenuItem Header="Copy Mem Address" Command="{Binding Path=DataContext.CopyMemAddress, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
+                    <MenuItem Header="Copy native address" Command="{Binding Path=DataContext.CopyMemAddress, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
                     <MenuItem Header="Open in NativeDB..." Command="{Binding Path=DataContext.OpenInNativeDB, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}}" />
                 </ContextMenu>
             </DataGrid.ContextMenu>

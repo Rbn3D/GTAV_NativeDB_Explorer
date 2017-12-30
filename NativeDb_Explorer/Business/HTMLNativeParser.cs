@@ -62,7 +62,7 @@ namespace NativeDb_Explorer.Business
                 {
                     var fndelc = fn.QuerySelector(".fndecl");
 
-                    var fnName = fndelc.GetExclusiveText().Trim().TrimEnd("(");
+                    var fnName = fndelc.GetExclusiveText().Trim().TrimEnd("()").TrimEnd("(");
                     var fnParamsStr = extractParametersSignature(fndelc, fnName);
 
                     var fdesc = fn.QuerySelector(".fdesc");
