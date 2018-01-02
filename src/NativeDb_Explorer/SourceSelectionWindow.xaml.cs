@@ -24,6 +24,8 @@ namespace NativeDb_Explorer
     /// </summary>
     public partial class SourceSelectionWindow : MetroWindow
     {
+        private AboutDialog aboutDialog;
+
         public SourceSelectionWindow()
         {
             InitializeComponent();
@@ -91,13 +93,16 @@ namespace NativeDb_Explorer
 
         private void AboutBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Add link to 5-Mods page instead of Github since I assume most people asking for help don't use/know what Github is
-            System.Diagnostics.Process.Start("https://www.gta5-mods.com/tools/gta-v-nativedb-explorer");
+            aboutDialog = new AboutDialog(this);
+
+            aboutDialog.closeBtn.Click += Close_Dialog;
+            this.ShowMetroDialogAsync(aboutDialog);
         }
 
-        private void GithubBtn_Click(object sender, RoutedEventArgs e)
+        private void Close_Dialog(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Rbn3D/GTAV_NativeDB_Explorer");
+            aboutDialog.closeBtn.Click -= Close_Dialog;
+            this.HideMetroDialogAsync(aboutDialog);
         }
     }
 }
